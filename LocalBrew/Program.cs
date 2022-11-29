@@ -1,7 +1,10 @@
+using LocalBrew.API_Client;
+
 var builder = WebApplication.CreateBuilder(args);
 
 // Add services to the container.
 builder.Services.AddControllersWithViews();
+builder.Services.AddTransient<IBreweriesAPI, BreweriesAPI>();
 
 var app = builder.Build();
 

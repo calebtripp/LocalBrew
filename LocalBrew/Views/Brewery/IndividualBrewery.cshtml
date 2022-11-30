@@ -1,5 +1,49 @@
-﻿@*
-    For more information on enabling MVC for empty projects, visit https://go.microsoft.com/fwlink/?LinkID=397860
-*@
-@{
-}
+﻿@model Brewery
+<h2>@Model.Name</h2>
+
+<div style="display: block"></div>
+
+<table class="table">
+    <tr>
+        <th>Name</th>    
+        <th>Type</th>
+        <th>Street</th>
+        <th>City</th>
+        <th>State</th>
+        <th>Zip</th>
+        <th>Website</th>
+    </tr>
+
+    <tr>
+        <td>@Model.Name</td>
+        <td>@Model.Type</td>
+        <td>@Model.Street</td>
+        <td>@Model.City</td>
+        <td>@Model.State</td>
+        <td>@Model.Zip</td>     
+        <td><a href="@Model.Website">Visit Us!</a></td>
+    </tr>
+</table>
+<br />
+
+<body>
+    <div id="map"></div>
+    <script>
+        function initMap() {
+            var options = {
+                zoom: 15,
+                center: { lat: @Model.Latitude, lng: @Model.Longitude },
+            };
+            var map = new google.maps.Map(document.getElementById('map'), options);
+            var marker = new google.maps.Marker({
+                position: { lat: @Model.Latitude, lng: @Model.Longitude },
+                map: map,
+            });
+        }
+    </script>
+
+    <script defer
+            src="https://maps.googleapis.com/maps/api/js?key=AIzaSyBAe7KKDgaS6BU0VSW5ZmjMjaNHU5rlxrU&callback=initMap">
+    </script>  @*The api key should be better secured. It is restricted to this URL so it can't be used just anywhere. In production this would be a security issue.*@
+    
+</body>

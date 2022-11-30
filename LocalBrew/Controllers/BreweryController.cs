@@ -1,4 +1,5 @@
 ﻿using LocalBrew.API_Client;
+using LocalBrew.Models;
 using Microsoft.AspNetCore.Mvc;
 
 namespace LocalBrew.Controllers
@@ -17,12 +18,12 @@ namespace LocalBrew.Controllers
 
             if (breweries == null)
             {
-                return View();
-            }  
+                return View("ErrorAPI");
+            }
 
             if (!breweries.Any())
             {
-                return View();
+                return View("ErrorEmptyBreweryList");
             }
 
             return View(breweries);
@@ -34,12 +35,12 @@ namespace LocalBrew.Controllers
 
             if (string.IsNullOrWhiteSpace(id))
             {
-                return View();
+                return View("ErrorNullID");
             }
 
             if (brewery == null)
             {
-                return View();
+                return View("ErrorAPI");
             }
 
             return View(brewery);   

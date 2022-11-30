@@ -1,1 +1,30 @@
-﻿
+﻿@model IEnumerable<Brewery>
+<h2>Harrisburg<br />Breweries</h2>
+<div style="display: block"></div>
+
+<table class="table">
+<tr>
+    <th>Name</th>
+    <th>Details</th>
+    <th>Type</th>
+    <th>Street</th>
+    <th>City</th>
+    <th>State</th>
+    <th>Zip</th>
+    <th>Website</th>  
+</tr>
+
+@foreach (var brewery in Model)
+    {
+       <tr>
+           <td>@brewery.Name</td>
+           <td><a asp-action="IndividualBrewery" asp-route-id="@brewery.ID">View</a></td>
+           <td>@brewery.Type</td>
+           <td>@brewery.Street</td>
+           <td>@brewery.City</td>
+           <td>@brewery.State</td>
+           <td>@brewery.Zip</td>
+           <td><a href="@brewery.Website">Visit Us!</a></td>           
+       </tr> 
+    }
+</table>

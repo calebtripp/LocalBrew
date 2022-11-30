@@ -15,10 +15,59 @@ html {
 
 body {
   margin-bottom: 60px;
+  background-image: url('/Assets/Beer Background.jpg');
+  background-repeat: no-repeat;
+  background-size: cover;
+  color: white;
 }
 
 #map {
     height:400px;
     width: 100%;
     padding-top: 85px;
+}
+/*.place{
+    width: 40px;
+    padding: 20px;
+    border: 8px solid blue;
+
+}*/
+h2 {
+    text-align: center;
+    color: papayawhip;
+    font-size: 125px;
+    font-style: oblique;
+    padding-top: 30px;
+    padding-bottom: 30px;
+}
+
+th {
+    font-size: 25px
+}
+
+td {
+    font-size: 20px;
+    font-weight: 500;
+    color: papayawhip;
+}
+
+a {
+    color: black;
+}
+
+.container {
+    color: black;
+}
+
+.errorbar {
+    padding: 30px;
+    margin: 20px;
+    border: 1px solid #ccc;
+    color: #ba3939;
+    background: lightyellow;
+    border: 2px solid #a33a3a;
+}
+
+img{
+    border: 2px solid black;
 }

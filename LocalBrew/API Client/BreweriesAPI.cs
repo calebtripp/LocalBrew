@@ -12,7 +12,7 @@ namespace LocalBrew.API_Client
         {
             try
             {
-                var APICall = $"https://api.openbrewerydb.org/breweries/{id}";
+                var APICall = $"https://api.openbrewuerydb.org/breweries/{id}";
                 var singleBreweryJSON = client.GetStringAsync(APICall).Result;
 
                 var singleBrewery = new Brewery();

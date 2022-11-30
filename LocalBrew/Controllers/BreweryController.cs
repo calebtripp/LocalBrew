@@ -27,5 +27,23 @@ namespace LocalBrew.Controllers
 
             return View(breweries);
         }
+
+        public IActionResult IndividualBrewery(string id)
+        {
+            var brewery = _response.GetBrewery(id);
+
+            if (string.IsNullOrWhiteSpace(id))
+            {
+                return View();
+            }
+
+            if (brewery == null)
+            {
+                return View();
+            }
+
+            return View(brewery);   
+
+        }
     }
 }

@@ -23,8 +23,8 @@ namespace LocalBrew.API_Client
                     singleBrewery.Street = JObject.Parse(singleBreweryJSON).GetValue("street").ToString();
                     singleBrewery.City = JObject.Parse(singleBreweryJSON).GetValue("city").ToString();
                     singleBrewery.State = JObject.Parse(singleBreweryJSON).GetValue("state").ToString();
-                    singleBrewery.Zip = JObject.Parse(singleBreweryJSON).GetValue("zip").ToString();
-                    singleBrewery.Website = JObject.Parse(singleBreweryJSON).GetValue("website").ToString();
+                    singleBrewery.Zip = JObject.Parse(singleBreweryJSON).GetValue("postal_code").ToString();
+                    singleBrewery.Website = JObject.Parse(singleBreweryJSON).GetValue("website_url").ToString();
                     singleBrewery.Latitude = JObject.Parse(singleBreweryJSON).GetValue("latitude").ToString();
                     singleBrewery.Longitude = JObject.Parse(singleBreweryJSON).GetValue("longitude").ToString();
                 }
